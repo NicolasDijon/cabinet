@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/page.css') }}">
+{% endblock %}
+
+{% block title %}Préparation à l'accouchement{% endblock %}
+
+{% block body %}
+
+{# Navbar #}
+
+{{ include('cabinet/navbar.html.twig') }}
+
+{# Bloc titre #}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="blocTitle text-center col-xl-12">
+            <h1>Cabinet Sage-Femme Osny</h1>
+            <h4><i class="fas fa-briefcase-medical"></i> Sage-Femme diplomée d'état</h4>  
+        </div>
+    </div>
+</div>
+
+{# Jumbotron préparation #}
+
+<div class="container">
+    <div class="blocPreparation mt-5">
+        <h2 class="h2Preparation text-center">Entretien prénatal précoce</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/entretien_prenatal.jpg') }}" style="height:auto;" class="img-fluid" 
+                        alt="Entretien">
+                </div>
+            </div>
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pPreparation my-2">Nathalie Thorax et Noémie Clément peuvent vous recevoir, pendant 
+                    votre grossesse (souvent au premier trimestre) pour un entretien prénatal. Ce rendez-vous, qui peut être en 
+                    individuel ou en couple permet de faire connaissance avec votre sage-femme.  Vous pouvez ainsi poser toutes 
+                    les questions que vous vous posez au sujet de votre grossesse, de l’accouchement ou lors de l’arrivée de bébé. 
+                    Nous profitons également de ce moment pour vous expliquez les différentes préparations à la naissance que 
+                    nous effectuons au cabinet et tout le suivi que nous mettrons en place ensemble. 
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="blocPreparation mt-4">
+        <h2 class="h2Preparation text-center">Préparation classique à la naissance</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4">
+        <div class="row">
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pPreparation">Cette préparation à la naissance permet de vous donner le plus 
+                    d’informations possibles pour vous accompagner pendant et après l’accouchement. Il y a sept cours dont 
+                    six plutôt théoriques qui sont souvent en groupe et un dernier cours de pratique qui est en individuel.
+                    <br>
+                    Voici les thèmes des différents cours :
+                </p>
+                <ul>
+                    <li><i class="fas fa-long-arrow-alt-right"></i> Anatomie du bassin et du périnée</li>
+                    <li><i class="fas fa-long-arrow-alt-right"></i> Quand partir à la maternité ? comment se passe un déclenchement ?</li>
+                    <li><i class="fas fa-long-arrow-alt-right"></i> Déroulement du travail et de l’accouchement</li>
+                    <li><i class="fas fa-long-arrow-alt-right"></i> Séjour à la maternité, que mettre dans sa valise ?</li>
+                    <li><i class="fas fa-long-arrow-alt-right"></i> Retour à la maison</li>
+                    <li><i class="fas fa-long-arrow-alt-right"></i> Allaitement/biberon</li>
+                    <li><i class="fas fa-long-arrow-alt-right"></i> Gestion des contractions (individuel)</li>
+                </ul>
+                <p class="font-weight-bold">Les cours sont donnés par Nathalie et Noémie.</p>
+            </div>
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/preparation_classique2.jpg') }}" style="height:auto;" class="img-fluid" 
+                        alt="Préparation">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="blocPreparation mt-4">
+        <h2 class="h2Preparation text-center">Hypnose</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4 mb-5">
+        <div class="row">
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/hypnose.webp') }}" style="height:auto;" class="img-fluid" 
+                        alt="Hypnose">
+                </div>
+            </div>
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pPreparation my-2">L’hypnose est un état de conscience modifié situé entre l’éveil 
+                    et le sommeil et qui permet à l’inconscient de suggérer des idées ou des solutions au problème posé. L’hypnose 
+                    périnatale reprend les outils de l’hypnose ericksonienne afin d’accompagner les mamans pendant la grossesse. 
+                    Nous pouvons travailler sur différents thèmes comme par exemple les maux de grossesse (nausées, mal de dos, 
+                    contractions…), le stress, les insomnies, les peurs ou bien l’utiliser comme préparation à la naissance.
+                    Il est aussi possible de se voir après un accouchement s’il y a besoin de travailler sur certaines douleurs ou 
+                    si l’accouchement a été difficile.
+                    L’hypnose trouve également sa place pour accompagner les problèmes rencontrés en gynécologie comme les douleurs, 
+                    les saignements, l’infertilité … 
+                    <br><br>
+                    <span class="font-weight-bold">Les séances d’hypnose ont lieu uniquement avec Nathalie Thorax.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="blocPreparation mt-4">
+        <h2 class="h2Preparation text-center">Travail sur les émotions liées à la grossesse et à l’accouchement</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4">
+        <div class="row">
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pPreparation">Même si on n'en a pas toujours conscience, de nombreuses futures mamans peuvent avoir
+                    en elle de lourdes peurs.<br>
+                    Peur de la douleur, peur de ne pas être capable d'accoucher, de ne pas être une bonne mère, peur de la césarienne, de perdre 
+                    son espace...<br>
+                    Ces peurs, émotions, ces stress peuvent prendre vie dans le corp et se matérialiser sous forme de pathologie, affection, barrages.
+                    Elles peuvent se transmettre aussi à l'enfant.
+                    Ce travail peut permettre à la future maman de se libérer de ces peurs, de travailler à sa propre reconnaissance, de mettre au monde
+                    son bébé de manière plus sereine.<br><br>
+                    Ce travail se déroule en " séances :<br>
+                    - Une séance de 30min pour expliquer le déroulement du travail.<br>
+                    - Deux séances d'une heure chacune.
+                </p>
+                <p class="font-weight-bold">Les séances ont lieu uniquement avec Noémie Clément.</p>
+            </div>
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/travail_emotion.jpg') }}" style="height:auto;" class="img-fluid" 
+                        alt="Préparation">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Footer #}
+
+{{ include('cabinet/footer.html.twig') }}
+
+{% endblock %}

@@ -1,0 +1,155 @@
+/* header */
+
+.fa-briefcase-medical{
+    font-size: 30px;
+    color: #95c92c;
+}
+
+.blocTitle{
+    margin-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+    background-color: #CCD9E0;
+    color: dimgray;
+}
+
+/* Page du site */
+
+.blocConsultation, .blocMassage, .blocPreparation{
+    background-image: linear-gradient(to bottom, #95C92C, #B5E554);
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.h2Consultation, .h2Massage, .h2Preparation{
+    padding-top: 5px;
+    color: white;
+}
+
+.pConsultation, .pMassage, .pPreparation{
+    text-align: justify;
+}
+
+li{
+    list-style: none;
+    text-align: justify;
+}
+
+/* Page conseil calendrier */
+
+th{
+    text-align: center;
+}
+
+td{
+    text-align: justify;
+}
+
+td:hover{
+    background-color: #ccd9e0;
+    color: black;
+}
+
+.padding{
+    margin: 5px 5px 5px 5px;
+}
+
+.case1{
+    background-color: #95c92c;
+}
+
+.case2{
+    background-color: #95c92c;
+}
+
+.case3{
+    background-color: #95c92c;
+}
+
+.case4{
+    background-image: linear-gradient(to bottom, #95c92c, #b5e554);
+}
+
+.case5{
+    background-color: #b5e554;
+}
+
+.case6{
+    background-color: #b5e554;
+}
+
+.case7{
+    background-image: linear-gradient(to bottom, #b5e554, white);
+}
+
+.arrow-down {
+    width: 0;
+    height: 60px;
+    background-color: #b5e554;
+
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+}
+
+.fa-user-md > .user_md{
+    font-size: 16px;
+    color: dimgray;
+}
+
+.fa-user-md{
+    font-size: 16px;
+    color: black;
+}
+
+/* page lexique */
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+  
+.active, .accordion:hover {
+background-color: #7fc6bd;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.pAccordion{
+    font-size: 16px;
+    color: dimgray;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: justify;
+}
+
+/* page calcul */
+
+.alertAccouchement{
+    background-color: #95c92c;
+}
+
+.h5Alert{
+    color: white;
+    padding-top: 10px;
+}
+
+.fa-calendar{
+    font-size: 40px;
+    color: #4bb5c1;
+}

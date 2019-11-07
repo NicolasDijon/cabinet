@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/page.css') }}">
+{% endblock %}
+
+{% block title %}Conseil lexique{% endblock %}
+
+{% block body %}
+
+{# Bloc titre #}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="blocTitle text-center col-xl-12">
+            <h1>Cabinet Sage-Femme Osny</h1>
+            <h4><i class="fas fa-briefcase-medical"></i> Sage-Femme diplomée d'état</h4>  
+        </div>
+    </div>
+</div>
+
+{# Navbar #}
+{{ include('cabinet/navbar.html.twig') }}
+
+{# Bloc lexique #}
+
+<div class="container">
+    <div class="mt-5 mb-5">
+        <button class="accordion">Aménorrhée</button>
+        <div class="panel">
+            <p class="pAccordion">Absence totale de règle.</p>
+        </div>
+        <button class="accordion">Semaine d'Aménorrhée de grossesse</button>
+        <div class="panel">
+            <p class="pAccordion">Pour calculer une grossesse, nous comptons à partir du premier jour de la date des dernières règles. 
+                Une grossesse dure 41sa (semaines d'Aménorrhée).
+            </p>
+        </div>
+        <button class="accordion">Périnée féminin</button>
+        <div class="panel">
+            <p class="pAccordion">Ensemble de muscles situés dans le bassin. Il est limité en avant par la symphyse pubienne et 
+                en arrière par le sacrum et le coccyx. Une partie du périnée joue le rôle de plancher pelvien c'est-à-dire qu'il soutient 
+                les organes posés dessus (la vessie, l'utérus et le rectum). Une autre partie du périnée intervient dans la continence 
+                des urines et des selles.
+            </p>
+        </div>
+        <button class="accordion">Col de l'utérus</button>
+        <div class="panel">
+            <p class="pAccordion">C'est la partie base de l'utérus qui fait jonction entre l'utérus et le vagin. 
+                Il est formé de deux grandes parties, l'endocol situé au niveau de l'utérus et l'exocol situé au niveau du vagin.
+            </p>
+            <div class="text-center mb-3">
+                <img src="{{ asset('img/organes.jpg') }}" class="img-fluid" alt="Col de l'utérus">
+            </div>
+        </div>
+        <button class="accordion">Dilatation du col</button>
+        <div class="panel">
+            <p class="pAccordion">Lors de l'accouchement, sous l'effet des contractions, le col va dans un premier temps perdre 
+                toute sa longueur : il va s'effacer. Une fois effacé, il va alors se dilater (s'ouvrir) pour pouvoir laisser passer le bébé. 
+                Le bébé peut s'engager dans le bassin une fois que le col est à dilatation complète, soit ouvert à 10cm. La dilatation du col est 
+                déterminée lors du toucher vaginal fait par la sage-femme ou le gynécologue.
+            </p>
+            <div class="text-center mb-3">
+                <img src="{{ asset('img/col.jpg') }}" class="img-fluid" alt="dilatation du col">
+            </div>
+        </div>
+        <button class="accordion">Menace d'accouchement prématuré</button>
+        <div class="panel">
+            <p class="pAccordion">Col de l'utérus qui s'est déjà modifié entre 25sa et 36sa et qui peut aboutir à un accouchement prématuré.
+            </p>
+        </div>
+        <button class="accordion">Perte des eaux</button>
+        <div class="panel">
+            <p class="pAccordion">Le foetus baigne dans le liquide amniotique limité par deux membranes, ce qu'on appelle 
+                plus communément la poche des eaux. Cette poche peut se rompre franchement ou fissurer. En cas de doute, 
+                Il faut aller consulter aux urgences de la maternité. La plupart du temps, celle-ci se rompt au terme de la grossesse 
+                et peut s'accompagner, ou non de contractions utérines.
+            </p>
+        </div>
+        <button class="accordion">Toxoplasmose</button>
+        <div class="panel">
+            <p class="pAccordion">Parasite que l'on retrouve dans la terre, les viandes peu cuites et infectées et dans les selles de chats. 
+                La sérologie de la Toxoplasmose fait partie des dépistages fait en début de grossesse. Une femme enceinte qui n'est pas 
+                immunisée doit prendre certaines précautions pour éviter une séroconversion pendant la grossesse. Pour cela, il est conseillé 
+                de bien laver ses fruits et légumes, de mettre des gants pour jardiner, de manger de la viande cuite et de porter des gants 
+                si vous devez faire la litière des chats.
+            </p>
+        </div>
+    </div>
+</div>
+
+{# Footer #}
+
+{{ include('cabinet/footer.html.twig') }}
+
+{% block javascript %}
+
+{# Script pour l'ouverture de l'accordeon #}
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+    }
+</script>
+
+{% endblock %}
+
+{% endblock %}
+
+
+

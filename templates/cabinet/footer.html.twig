@@ -1,0 +1,83 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+{% endblock %}
+
+{# Footer moyen de paiements #}
+
+<footer class="page-footer font-small blue-grey lighten-5">
+    <div style="background-image: linear-gradient(to bottom, #95C92C, #B5E554)">
+        <div class="container-fluid">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h5 class="h6Paiement mb-0">Paiement accepté</h5>
+                </div>
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+                    <a class="visa-ic">
+                        <i class="fab fa-cc-visa iconPaiement mr-4" style="font-size: 30px;"></i>
+                    </a>
+                    <a class="master-ic">
+                        <i class="fab fa-cc-mastercard iconPaiement mr-4" style="font-size: 30px"></i>
+                    </a>
+                    <a class="nomey-ic">
+                        <i class="far fa-money-bill-alt iconPaiement mr-4" style="font-size: 30px"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Footer lien, carte et infos #}
+    
+    <div class="container-fluid text-center mt-5">
+        <div class="row mt-3 mb-3 dark-grey-text">
+            <div class="col-xl-6 mb-4">
+                <h6 class="text-uppercase font-weight-bold">Plan</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <div id="map-container" class="z-depth-1-half map-container img-thumbnail" style="height: 170px">
+                    <iframe src="https://maps.google.com/maps?q=49+Rue+Aristide+Briand,+95520+Osny&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">Liens utiles</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a class="dark-grey-text" href="https://www.ameli.fr/" 
+                        target="blank" data-toggle="tooltip" data-placement="right" title="Aller sur le site">Ameli.fr</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="https://www.lllfrance.org/" 
+                        target="blank" data-toggle="tooltip" data-placement="right" title="Aller sur le site">Leche league</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="https://www.santepubliquefrance.fr/docs/le-guide-de-l-allaitement-maternel" 
+                        target="blank" data-toggle="tooltip" data-placement="right" title="Aller sur le site">Guide de l'allaitement  
+                    </a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="https://www.ch-pontoise.fr/" 
+                        target="blank" data-toggle="tooltip" data-placement="right" title="Aller sur le site">Hopital de Pontoise</a>
+                </p>
+            </div>
+            <div class="col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p class="font-weight-bold">THORAX Nathalie</p>
+                <p><i class="fas fa-phone mr-3"></i> 0611783551</p>
+                <p><i class="fas fa-envelope mr-3"></i> nathalie.thorax@sfr.fr</p>
+                <hr>
+                <p class="font-weight-bold">CLEMENT Noémie</p>
+                <p><i class="fas fa-phone mr-3"></i> 0758534542</p>
+                <p><i class="fas fa-envelope mr-3"></i> noémie.clement95@gmail.com</p>
+                <hr>
+                <p class="font-weight-bold">ROMAGNE Vincent</p>
+                <p><i class="fas fa-phone mr-3"></i> 0772225064</p>
+                <p><i class="fas fa-envelope mr-3"></i> vincent.romagne@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright text-center text-black-50 py-3" style="background-image: linear-gradient(to bottom, #4BB5C1, #7FC6BD);">
+        © 2019 Copyright:
+        <p class="dark-grey-text"> Cabinet Sage-Femme Osny</p>
+    </div>
+</footer>

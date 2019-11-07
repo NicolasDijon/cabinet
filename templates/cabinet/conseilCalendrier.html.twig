@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/page.css') }}">
+{% endblock %}
+
+{% block title %}Conseil calendrier{% endblock %}
+
+{% block body %}
+
+{# Navbar #}
+{{ include('cabinet/navbar.html.twig') }}
+
+{# Bloc titre #}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="blocTitle text-center col-xl-12">
+            <h1>Cabinet Sage-Femme Osny</h1>
+            <h4><i class="fas fa-briefcase-medical"></i> Sage-Femme diplomée d'état</h4>  
+        </div>
+    </div>
+</div>
+
+{# Tableau de grossesse #}
+
+<div class="container">
+    <table class="table mt-5 mb-5">
+        <thead>
+            <tr>
+                <th scope="col">Mois (SA)</th>
+                <th scope="col"><i class="fas fa-user-md"></i> Consultation</th>
+                <th scope="col"><i class="fas fa-address-book"></i> Bilan</th>
+                <th scope="col"><i class="far fa-image"></i> Echographie</th>
+                <th scope="col"><i class="fas fa-folder-open"></i> Administratif</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="case1">1, 2, 3 mois<br>(3sa→6sa)(7sa→10sa)(11sa→15)</th>
+                <td><i class="fas fa-user-md"></i> 1ere consultation avec sage-femme ou gynéco</td>
+                <td><i class="fas fa-address-book"></i> 1er bilan sanguin (sérologies, ...)</td>
+                <td>
+                    <i class="far fa-image"></i> 1ère échographie entre 11sa et 13 sa+6j<br><br>  
+                    <i class="far fa-image"></i> Proposition dépistage trisomie 21
+                </td>
+                <td><i class="fas fa-folder-open"></i> Déclaration de grossesse suite à la première échographie</td>
+            </tr>
+            <tr>
+                <th scope="row" class="case2">4 mois<br>(16sa→19sa)</th>
+                <td><i class="fas fa-user-md"></i> 2ème consultation de grossesse + entretien prénatal précoce avec sage-femme</td>
+                <td>
+                    <i class="fas fa-address-book"></i> Toxoplasmose si non immunisée<br><br> 
+                    <i class="fas fa-address-book"></i> Rubéole si non immunisée<br><br> 
+                    <i class="fas fa-address-book"></i> Protéinurie/glycosurie
+                </td>
+                <td>...</td>
+                <td>
+                    <i class="fas fa-folder-open"></i> Inscription maternité <br><br> 
+                    <i class="fas fa-folder-open"></i> Examen bucco dentaire
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" class="case3">5 mois<br>(20sa→24sa)</th>
+                <td><i class="fas fa-user-md"></i> 3ème consultation de grossesse</td>
+                <td>
+                    <i class="fas fa-address-book"></i> Toxoplasmose <br><br> 
+                    <i class="fas fa-address-book"></i> Protéinurie/glycosurie
+                </td>
+                <td><i class="far fa-image"></i> 2ème échographie entre 20sa et 25sa</td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <th scope="row" class="case4">6 mois<br>(25sa→28sa)</th>
+                <td><i class="fas fa-user-md"></i> 4ème consultation de grossesse</td>
+                <td>
+                    <i class="fas fa-address-book"></i> Toxoplasmose <br><br> 
+                    <i class="fas fa-address-book"></i> Dépistage diabète gestationnel<br><br>  
+                    <i class="fas fa-address-book"></i> NFS pour rechercher anémie<br><br>  
+                    <i class="fas fa-address-book"></i> Prot/gly 
+                </td>
+                <td>...</td>
+                <td>
+                    <i class="fas fa-folder-open"></i> 1er RDV à la maternité<br><br> 
+                    <i class="fas fa-folder-open"></i> Prescription d’une ampoule de vitamine D<br><br> 	
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" class="case5">7 mois<br>(29sa→32sa)</th>
+                <td><i class="fas fa-user-md"></i> 5ème consultation de grossesse<br><br></td>
+                <td>
+                    <i class="fas fa-address-book"></i> Toxoplasmose <br><br>
+                    <i class="fas fa-address-book"></i> Prot/gly
+                </td>
+                <td><i class="far fa-image"></i> 3ème échographie entre 30sa et 35sa</td>
+                <td><i class="fas fa-folder-open"></i> Préparation à la naissance à débuter</td>
+            </tr>
+            <tr>
+                <th scope="row" class="case6">8 mois<br>(33sa→36sa)</th>
+                <td><i class="fas fa-user-md"></i> 6ème consultation de grossesse</td>
+                <td>
+                    <i class="fas fa-address-book"></i> Toxoplasmose<br><br>
+                    <i class="fas fa-address-book"></i> Prot/gly<br><br>
+                    <i class="fas fa-address-book"></i> RAI<br><br>
+                    <i class="fas fa-address-book"></i> Prélèvement vaginal avec recherche streptocoque B 
+                </td>
+                <td>...</td>
+                <td><i class="fas fa-folder-open"></i> RDV avec anesthésiste de la maternité</td>
+            </tr>
+            <tr>
+                <th scope="row" class="case7">9 mois<br>(37sa→41sa)</th>
+                <td>
+                    <i class="fas fa-user-md"></i> 7ème consultation de grossesse
+                </td>
+                <td>
+                    <i class="fas fa-address-book"></i> Toxo<br><br>
+                    <i class="fas fa-address-book"></i> Prot/gly<br><br>
+                    <i class="fas fa-address-book"></i> RAI
+                </td>
+                <td>...</td>
+                <td><i class="fas fa-folder-open"></i> 2ème RDV à la maternité</td>
+            </tr>
+            <tr class="arrowCase">
+                <th scope="row" class="arrow-down"></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{# Footer #}
+
+{{ include('cabinet/footer.html.twig') }}
+
+{% endblock %}

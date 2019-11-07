@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+
+{# Bloc titre #}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="blocTitleAdmin text-center col-xl-12">
+            <h1>Cabinet Sage-Femme Osny</h1>
+            <h4><i class="fas fa-briefcase-medical"></i> Sage-Femme diplomée d'état</h4>  
+            <button type="button" class="btn btn-primary btn-block mt-3" onclick="openNav()">Menu</button>
+        </div>
+    </div>
+</div>
+
+{# Navbar #}
+{{ include('admin/navbarAdmin.html.twig') }}
+
+{# Tableau avec la liste de tout les posts #}
+<div class="container mt-5 mb-4">
+    {% for msg in app.session.flashBag.get('success') %}
+    <div class="alert alert-success text-center alert-dismissible fade show mt-4" role="alert">
+        {{ msg }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    <h2 class="text-center mb-5">Liste des posts</h2>
+    <table class="table table-striped"> 
+        <tr>
+            <th>Titre</th>
+            <th>Message</th>
+            <th>Publier par</th>
+            <th>Publier le</th>
+            <th colspan="2" class="text-center">Actions</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post.title }}</td>
+            <td>{{ post.message }}</td>
+            <td>{{ post.practicien }}</td>
+            <td>{{ post.publierLe|date('d-m-y') }}</td>
+            <td><a href="{{ path('admin_post_edit', { 'id': post.id }) }}" 
+                class="btn btn-warning btn-block"
+                data-toggle="tooltip" 
+                data-placement="bottom"
+                title="Modifier"
+                ><i class="fas fa-pen"></i></a></td>
+            <td><a href="{{ path('admin_post_delete', { 'id': post.id }) }}" 
+                class="btn btn-danger btn-block"
+                data-toggle="tooltip" 
+                data-placement="bottom"
+                title="Supprimer"
+                ><i class="fas fa-trash"></i></a></td>
+        </tr>
+        {% else %}
+        <td>Aucun post dans la base de données !</td>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+
+  <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

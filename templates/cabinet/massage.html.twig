@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/page.css') }}">
+{% endblock %}
+
+{% block title %}Massage bébé{% endblock %}
+
+{% block body %}
+
+{# Navbar #}
+
+{{ include('cabinet/navbar.html.twig') }}
+
+{# Bloc titre #}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="blocTitle text-center col-xl-12">
+            <h1>Cabinet Sage-Femme Osny</h1>
+            <h4><i class="fas fa-briefcase-medical"></i> Sage-Femme diplomée d'état</h4>  
+        </div>
+    </div>
+</div>
+
+{# Jumbotron massage #}
+
+<div class="container">
+    <div class="blocMassage mt-5">
+        <h2 class="h2Massage text-center">Massage bébé</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4 mb-5">
+        <div class="row">
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/massage.jpg') }}" style="height:auto;" class="img-fluid" 
+                        alt="Massage bébé">
+                    <img src="{{ asset('img/massage2.jpg') }}" style="height:auto;" class="img-fluid" 
+                        alt="Massage bébé">
+                    <img src="{{ asset('img/massage3.jpg') }}" style="height:auto;" class="img-fluid" 
+                        alt="Massage bébé">
+                </div>
+            </div>
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <a href="#!" class="green-text">
+                    <h6 class="h6 pb-1"><i class="fas "></i></h6>
+                </a>
+                <p class="font-weight-normal pMassage">Nathalie Thorax propose au cabinet des ateliers massage bébé qui a fait 
+                    une formation auprès de l’association française de massage bébé.<br><br> Le massage permet un moment d’échange rempli 
+                    d’amour et de tendresse entre vous et votre bébé. Il a des bienfaits à la fois physique et émotionnel. Il permet de 
+                    soulager certains problèmes de transit comme la constipation ou les coliques. Il aide bébé à découvrir son corps 
+                    grâce au toucher qui est l’un des sens les plus développé chez lui. Cela favorise également un meilleur sommeil et 
+                    renforce le lien parent/enfant.<br><br> 
+                    C’est aussi un moment pour discuter et aborder les sujets autour de bébé comme le sommeil, les pleurs, les différents 
+                    états de conscience d’un bébé ainsi que l’adaptation du massage selon l’âge de l’enfant.<br><br> 
+                    C’est le parent qui masse l’enfant. Nathalie vous montrera les mouvements à l’aide d’un poupon. Si les deux parents viennent, 
+                    alors un parent massera bébé et le deuxième un poupon. De même, si l’enfant n’est pas disponible au moment de la séance 
+                    alors vous masserez le poupon à la place.<br><br> 
+                    Vous apprendrez l’intégralité du massage en trois séances. A chaque séance, nous découvrirons une nouvelle partie du 
+                    corps à masser et réviserons celles vues auparavant.<br><br> 
+                    A la fin de la séance, vous aurez à disposition un document pour vous rappeler tous les mouvements que vous viendrez 
+                    d’apprendre afin de pouvoir refaire le massage autant de fois que vous le voudrez à la maison.<br><br> 
+                    Matériel à apporter : une grande serviette, de l’huile, de quoi changer bébé et bien sur votre bébé ! 
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Footer #}
+
+{{ include('cabinet/footer.html.twig') }}
+
+{% endblock %}

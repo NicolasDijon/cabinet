@@ -1,0 +1,37 @@
+/* header */
+
+.navbar{
+    background-color: #4bb5c1;
+}
+
+.nav-link{
+    font-size: 18px;
+}
+
+.view {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0.8)), url("../img/img2.jpg")no-repeat center center;
+    background-size: cover;
+    opacity:0.8;
+}
+
+html,
+body,
+header,
+.view {
+  height: auto;
+}
+
+.contenu{
+    padding-top: 25%;
+    padding-bottom: 25%;
+    color: white;
+}
+
+.fa-briefcase-medical{
+    font-size: 50px;
+    color: #95c92c;
+}
+
+
+  
+

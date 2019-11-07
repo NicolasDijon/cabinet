@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Cabinet Osny{% endblock %}</title>
+        <link rel="icon" type="favicon" sizes="32x32" href="{{ asset('crawling-baby-silhouette.png') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.standalone.min.css" />
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.fr.min.js"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $('.js-datepicker').datepicker({
+                    format: 'yyyy-mm-dd',
+                    language: 'fr',
+                });
+
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip()
+                });
+
+                $(".dateConception").focusout(function(e) {
+                e.preventDefault();
+
+                // Récupération de la valeur du champ date
+                var dateConception = $(this).val();
+
+                    // Si la date n'est pas vide
+                    if ('' !== dateConception) {
+                        // Envoi d'une requête AJAX POST avec la date sélectionnée
+                        $.ajax({
+                            url: "{{ path('date_accouchement') }}",
+                            type: "POST",
+                            data: {
+                                "dateConception": dateConception
+                            },
+                            success: function (data) {
+                                // Affichage d'une alerte avec la date de conception
+                                $(".resultatDateAccouchement").addClass("alert alert-success alertAccouchement");
+                                $(".resultatDateAccouchement").html(
+                                    "<h5 class='text-center h5Alert'>La date estimée de votre accouchement est le : "  + data + "</h5>"
+                                );
+                            }
+                        });
+                    } 
+                });
+
+                $(".dateDerniereRegle").focusout(function(e) {
+                e.preventDefault();
+
+                // Récupération de la valeur du champ date
+                var dateDerniereRegle = $(this).val();
+
+                    // Si la date n'est pas vide
+                    if ('' !== dateDerniereRegle) {
+                        // Envoi d'une requête AJAX POST avec la date sélectionnée
+                        $.ajax({
+                            url: "{{ path('date_conception') }}",
+                            type: "POST",
+                            data: {
+                                "dateDerniereRegle": dateDerniereRegle
+                            },
+                            success: function (data) {
+                                // Affichage d'une alerte avec la date de conception
+                                $(".resultatDateConception").addClass("alert alert-success alertAccouchement");
+                                $(".resultatDateConception").html(
+                                    "<h5 class='text-center h5Alert'>La date de conception estimée est le : "  + data + "</h5>"
+                                );
+                            }
+                        });
+                    } 
+                });
+            });
+        </script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

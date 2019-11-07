@@ -1,0 +1,40 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+{% endblock %}
+
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark orange lighten-1">
+        <a class="navbar-brand" href="{{ path('home') }}" data-toggle="tooltip" data-placement="bottom" title="Accueil">
+            <img src="{{ asset('img/crawling-baby-silhouette(2).png') }}" width="30px" class="mb-1">
+        </a>       
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+            aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Activités</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ path('consultation') }}">Consultation</a>
+                    <a class="dropdown-item" href="{{ path('preparation') }}">Préparation à la naissance</a>
+                    <a class="dropdown-item" href="{{ path('massage') }}">Massage Bébé</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('horaires_tarifs') }}">Horaires & tarifs</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Conseils</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ path('calendrier') }}">Calendrier de grossesse</a>
+                    <a class="dropdown-item" href="{{ path('lexique') }}">Dictionnaire de la sage-femme</a>
+                    <a class="dropdown-item" href="{{ path('calcul') }}">Calculer ma date d'accouchement</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

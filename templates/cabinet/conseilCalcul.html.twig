@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/page.css') }}">
+{% endblock %}
+
+{% block title %}Conseil calcul{% endblock %}
+
+{% block body %}
+
+{# Bloc titre #}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="blocTitle text-center col-xl-12">
+            <h1>Cabinet Sage-Femme Osny</h1>
+            <h4><i class="fas fa-briefcase-medical"></i> Sage-Femme diplomée d'état</h4>  
+        </div>
+    </div>
+</div>
+
+{# Navbar #}
+{{ include('cabinet/navbar.html.twig') }}
+
+{# Jumbotron avec formulaire de calcul #}
+
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div class="text-center">
+            <i class="fas fa-calendar mb-3"></i>
+        </div>
+        <h2 class="text-center mb-5">Calculer ma date d'accouchement</h2>
+        <div class="mt-4">
+            <p class="text-center mb-4">Vous pouvez calculer votre date prévue d'accouchement en renseignant la date de début de grossesse. Dans le cas où vous ne connaissez pas cette 
+                date, vous pouvez la calculer grâce à la date de vos dernières règles.
+            </p>
+            <hr>
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_row(form.dateDerniereRegle, {'label': "Date de vos dernières règles", 'attr': {'class': 'form-control js-datepicker dateDerniereRegle'}}) }}
+            </div>
+            <div class="resultatDateConception"></div>
+            <div class="form-group">
+                {{ form_row(form.dateConception, {'label': "Date début de grossesse", 'attr': {'class': 'form-control js-datepicker dateConception'}}) }}
+            </div>
+            {{ form_end(form) }}
+            <div class="resultatDateAccouchement"></div>
+        </div>
+    </div>
+</div>
+
+{{ include('cabinet/footer.html.twig') }}
+
+{% endblock %}

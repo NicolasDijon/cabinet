@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/page.css') }}">
+{% endblock %}
+
+{% block title %}Consultation{% endblock %}
+
+{% block body %}
+
+{# Navbar #}
+{{ include('cabinet/navbar.html.twig') }}
+
+{# Bloc titre #}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="blocTitle text-center col-xl-12">
+            <h1>Cabinet Sage-Femme Osny</h1>
+            <h4><i class="fas fa-briefcase-medical"></i> Sage-Femme diplomée d'état</h4>  
+        </div>
+    </div>
+</div>
+
+{# Jumbotron consultations #}
+
+<div class="container">
+    <div class="blocConsultation mt-5">
+        <h2 class="h2Consultation text-center">Consultation de Grossesse</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/pregnancy4.jpg') }}" style="height:auto;" class="img-fluid" alt="Femme enceinte">
+                </div>
+            </div>
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pConsultation my-2">Le suivi de grossesse peut être réalisé par Noémie Clément ou Nathalie 
+                    Thorax dès le premier mois. Nous avons la compétence de prescrire et d’interpréter les analyses faites au laboratoire 
+                    ainsi que les échographies. Nous réalisons l’examen médical et prenons un temps pour répondre à vos questions si besoin. 
+                    Nous vous expliquons également, au fil de la grossesse, toutes les démarches à réaliser (administratives, inscription à 
+                    la maternité, préparation à la naissance). Nous suivons les grossesses dites physiologiques donc de déroulement normal. 
+                    En cas de problème, nous sommes dans l’obligation de vous réorienter auprès d’un gynécologue ou à l’hôpital.<br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="blocConsultation mt-4">
+        <h2 class="h2Consultation text-center">Consultation de gynécologie</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4">
+        <div class="row">
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pConsultation">Les sages-femmes ont la compétence de faire du suivi préventif et de 
+                    contraception dans le cadre de la gynécologie. Nous pouvons donc faire le suivi classique (interrogatoire, examen 
+                    médical avec frotti si nécessaire, prescription d’examen) de l’adolescence à l’après ménopause. Nous pouvons également 
+                    prescrire, poser et retirer tout type de contraception (sauf stérilisation). Par-contre si nous dépistons quelque chose 
+                    de pathologique (frotti anormal, imagerie mammaire pathologique, infections urinaires récidivantes ou mycose à 
+                    répétition par exemple), nous sommes dans l’obligation de vous réorienter auprès d’un gynécologue ou votre 
+                    médecin traitant. 
+                </p>
+            </div>
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/pregnancy3.jpg') }}" style="height:auto;" class="img-fluid" alt="Femme enceinte">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="blocConsultation mt-4">
+        <h2 class="h2Consultation text-center">Consultation post-natale</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/pregnancy1.jpg') }}" style="height:auto;" class="img-fluid" alt="Femme enceinte">
+                </div>
+            </div>
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pConsultation my-2">Noémie et Nathalie peuvent vous recevoir pour une consultation 
+                    post-natale 6 à 8 semaines après l’accouchement. Cette consultation permet d’échanger autour de vous et 
+                    de votre bébé, de réaliser un examen gynécologique, de faire un frotti si nécessaire. Nous profitons aussi 
+                    pour faire un point sur les différentes méthodes de contraception qui vous sont accessibles. Enfin, si besoin, 
+                    nous pouvons vérifier le carnet de vaccination chez le couple, si cela n’a pas été fait avant la grossesse. 
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="blocConsultation mt-4">
+        <h2 class="h2Consultation text-center">Rééducation du périnée</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4 mb-5">
+        <div class="row">
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pConsultation">Noémie et Nathalie pratiquent, au cabinet, la rééducation du périnée. 
+                    Cela consiste à renforcer, retonifier, parfois prendre conscience de cet ensemble musculaire si important chez 
+                    la femme. Nous pratiquons les séances soit manuellement, soit à l’aide d’une sonde si besoin (électro-stimulation 
+                    et biofeed-back). Le nombre et le type de séance est à déterminer ensemble, lors de la première consultation. 
+                </p>
+            </div>
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/pregnancy2.jpg') }}" style="height:auto;" class="img-fluid" alt="Femme enceinte">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="blocConsultation mt-4">
+        <h2 class="h2Consultation text-center">Echographie</h2>
+    </div>
+    <div class="jumbotron text-center hoverable p-4 mb-5">
+        <div class="row">
+            <div class="col-md-4 offset-md-1 mx-auto my-auto">
+                <div class="view overlay">
+                    <img src="{{ asset('img/img3.jpg') }}" style="height:auto;" class="img-fluid" alt="Femme enceinte">
+                </div>
+            </div>
+            <div class="col-md-7 text-md-left mx-auto my-auto">
+                <p class="font-weight-normal pConsultation my-2">Vincent Romagné, sage-femme échographiste, réalise les échographies 
+                    obstétricales (de la grossesse) pour les grossesses simples ainsi que les gémellaires.
+                    Il vous accueille dans son cabinet pour des échographies de datation de grossesse afin de déterminer la localisation 
+                    de celle-ci ou en vue d'une IVG, mais aussi les échographies de dépistages du 1er (11-13 SA), 2e (21-24 SA) et 3e 
+                    trimestre (31-34 SA), le suivi mensuel des grossesses gémellaires et les échographies de contrôle de la croissance fœtale. 
+                    Vincent Romagné est agréé pour le dépistage de la trisomie 21 au 1er trimestre de la grossesse.
+                    Il ne pratique que les échographies et ne fait donc pas de suivi de grossesse ni de suivi gynécologique.<br><br>
+                    <span class="font-weight-bold">Pour information, seul Vincent Romagné pratique les échographies au cabinet.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Footer #}
+
+{{ include('cabinet/footer.html.twig') }}
+
+{% endblock %}

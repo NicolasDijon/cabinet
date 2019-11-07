@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/page.css') }}">
+{% endblock %}
+
+{% block title %}Horaires & Tarifs{% endblock %}
+
+{% block body %}
+
+{# Navbar #}
+{{ include('cabinet/navbar.html.twig') }}
+
+{# Bloc titre #}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="blocTitle text-center col-xl-12">
+            <h1>Cabinet Sage-Femme Osny</h1>
+            <h4><i class="fas fa-briefcase-medical"></i> Sage-Femme diplomée d'état</h4>  
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    {# Jumbotron horaire #}
+    <div class="jumbotron text-center hoverable mt-4">
+        <i class="far fa-clock mb-2"></i>
+        <h2 class="h2 mb-4">Horaires (Cabinet)</h2>
+        <hr>
+        <div class="row">
+            <div class="col-lg-4">
+                <h4 class="text-center">CLEMENT Noémie</h4>
+                <ul class="liste mt-4 mb-4">
+                    <li>Lundi <i class="fas fa-long-arrow-alt-right"></i> Absente</li>
+                    <li>Mardi <i class="fas fa-long-arrow-alt-right"></i> 9h00-12h00</li>
+                    <li>Mercredi <i class="fas fa-long-arrow-alt-right"></i> 9h00-18h00</li>
+                    <li>Jeudi <i class="fas fa-long-arrow-alt-right"></i> 9h00-12h00</li>
+                    <li>Vendredi <i class="fas fa-long-arrow-alt-right"></i> 13h00-20h00</li>
+                    <li>Samedi (Une semaine sur deux) <i class="fas fa-long-arrow-alt-right"></i> 9h00-12h00</li>  
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h4 class="text-center">THORAX Nathalie</h4>
+                <ul class="liste mt-4 mb-4">
+                    <li>Lundi <i class="fas fa-long-arrow-alt-right"></i> 9h00-12h00</li>
+                    <li>Mardi <i class="fas fa-long-arrow-alt-right"></i> 13h30-17h30</li>
+                    <li>Mercredi <i class="fas fa-long-arrow-alt-right"></i> Absente</li>
+                    <li>Jeudi <i class="fas fa-long-arrow-alt-right"></i> 13h30-17h30</li>
+                    <li>Vendredi <i class="fas fa-long-arrow-alt-right"></i> 9h00-12h00</li>
+                    <li>Samedi (Une semaine sur deux) <i class="fas fa-long-arrow-alt-right"></i> 9h00-16h30</li>  
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h4 class="text-center">ROMAGNE Vincent</h4>
+                <ul class="liste mt-4 mb-4">
+                    <li>Lundi <i class="fas fa-long-arrow-alt-right"></i> 15h00-20h00</li>
+                    <li>Mardi <i class="fas fa-long-arrow-alt-right"></i> 9h00-12h30</li>
+                    <li>Mercredi <i class="fas fa-long-arrow-alt-right"></i> Absent</li>
+                    <li>Jeudi <i class="fas fa-long-arrow-alt-right"></i> 15h00-20h00</li>
+                    <li>Vendredi <i class="fas fa-long-arrow-alt-right"></i> 9h00-17h00</li>
+                    <li>Samedi (Une semaine sur deux) <i class="fas fa-long-arrow-alt-right"></i> 9h00-18h30</li>  
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center font-weight-bold mt-4">Pour une question d’organisation, je n’accepte pas les retards de plus 
+            de 15 minutes. Merci de votre compréhension.
+        </p>
+    </div>
+
+    {# Jumbotron tarifs #}
+    <div class="jumbotron text-center hoverable mt-4">
+        <i class="fa fa-wallet mb-2"></i>
+        <h2 class="h2 mb-5">Tarifs consultation</h2>
+        <div class="row">
+            <div class="col-xl-6">
+                <h4 class="h4 mb-4 text-center">Consultations</h4>
+                <hr>
+                <ul class="liste">
+                    <li>Consultation de gynécologie <i class="fas fa-caret-right"></i> 25€</li>
+                    <li>Consultation de gynécologie 1ere fois <i class="fas fa-caret-right"></i> 50€</li>
+                    <li>Consultation de gynécologie + frottis <i class="fas fa-caret-right"></i> 37.46€</li>
+                    <li>Consultation de contraception et de prévention entre 15<br> et 18 ans <i class="fas fa-caret-right"></i> 46€</li>
+                    <li>Consultation de grossesse 1ere fois <i class="fas fa-caret-right"></i> 60.25€</li>
+                    <li>Consultation de grossesse (à partir de la 2ème) <i class="fas fa-caret-right"></i> 25€</li>
+                    <li>Pose DIU (stérilet) <i class="fas fa-caret-right"></i> 38.40€ - Retrait DIU (stérilet) 
+                        <i class="fas fa-caret-right"></i> 62.72€
+                    </li>
+                    <li>Pose d’implant sous cutané <i class="fas fa-caret-right"></i> 17.99€</li>
+                    <li>Ablation ou changement d’implant sous cutané <i class="fas fa-caret-right"></i> 40.80€</li>
+                    <li>Rééducation du périnée <i class="fas fa-caret-right"></i> 19.60€ la séance</li>
+                    <li>Hypnose médicale <i class="fas fa-caret-right"></i> 50€ la séance</li>
+                </ul>
+                <br><br>
+                <h4 class="h4 mb-4 text-center">Echographie</h4>
+                <hr>
+                <ul class="liste">
+                    <li>La séance (prévoir 3 séances) <i class="fas fa-caret-right"></i> 25€ + une partie hors nomenclature de 30€</li>
+                </ul>
+            </div>
+            <div class="col-xl-6">
+                <h4 class="h4 mb-4 mt-4 text-center">Préparation à la naissance</h4>
+                <hr>
+                <ul class="liste">
+                    <li>Entretien prénatal <i class="fas fa-caret-right"></i> 42€</li>
+                    <li>Préparation classique à l’accouchement ou hypnose prénatale<br> <i class="fas fa-caret-right"></i> 33.6€ la séance si individuelle 
+                        <i class="fas fa-caret-right"></i> 32.48€ si en groupe
+                    </li>
+                </ul>
+                <br><br>
+                <h4 class="h4 mb-4 text-center">Massage bébé</h4>
+                <hr>
+                <ul class="liste">
+                    <li>La séance (prévoir 3 séances) <i class="fas fa-caret-right"></i> 35€</li>
+                </ul>
+                <br><br>
+                <h4 class="h4 mb-4 text-center">Préparation spécifique sur les émotions liées à la grossesse et à l'accouchement</h4>
+                <hr>
+                <ul class="liste">
+                    <li>La séance (prévoir 3 séances) <i class="fas fa-caret-right"></i> 25€ + une partie hors nomenclature de 30€</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xl-12">
+                <ul class="liste1 mt-4">
+                    <li>Tarifs conventionnés par la sécurité sociale.</li>
+                    <li>Prise en charge à 100% à partir du 6ème mois de grossesse pour :</li>
+                    <li>La consultation de grossesse</li>
+                    <li>La rééducation du périnée dans l’année suivant l’accouchement</li>
+                    <li>La préparation classique à l’accouchement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Footer #}
+{{ include('cabinet/footer.html.twig') }}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+/* body */
+
+h1, h2, h3, h4, h5, P, label{
+    color: dimgray;
+}
+
+/* header */
+
+.fa-briefcase-medical{
+    font-size: 30px;
+    color: #95c92c;
+}
+
+.blocTitleAdmin{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+    background-color: #CCD9E0;
+}
+
+/* jumbotron */
+
+.jumbotron{
+    -webkit-box-shadow: 7px 7px 20px -4px rgba(0,0,0,0.6);
+    -moz-box-shadow: 7px 7px 20px -4px rgba(0,0,0,0.6);
+    box-shadow: 7px 7px 20px -4px rgba(0,0,0,0.6);
+}
+
+/* icones */
+
+.fa-calendar{
+    font-size: 40px;
+    color: dimgray;
+}
+
+.black{
+    color: black;
+}
+
+.pictoFolder, .pictoCalendar{
+    color: black;
+    font-size: 16px;
+}
+
