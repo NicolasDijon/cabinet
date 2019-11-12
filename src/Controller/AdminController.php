@@ -27,7 +27,6 @@ class AdminController extends AbstractController
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-
             $post->setPublierLe(new \dateTime());
             $manager->persist($post);
             $manager->flush();

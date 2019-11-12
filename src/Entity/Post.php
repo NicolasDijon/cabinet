@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -46,6 +47,12 @@ class Post
 
     /**
      * @Vich\UploadableField(mapping="post_photo", fileNameProperty="photo")
+     * @Assert\File(
+     * maxSize="1000k",
+     * maxSizeMessage="Le fichier excède 1000Ko.",
+     * mimeTypes={"image/png", "image/jpeg", "image/jpg", "image/svg+xml", "image/gif"},
+     * mimeTypesMessage= "formats autorisés: png, jpeg, jpg, svg, gif"
+     * )
      */
     private $photoFile;
 
