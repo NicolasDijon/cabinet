@@ -39,6 +39,10 @@ li{
 
 /* Page conseil calendrier */
 
+.calendrier_mobile{
+    display: none;
+}
+
 th{
     text-align: center;
 }
@@ -152,4 +156,28 @@ background-color: #7fc6bd;
 .fa-calendar{
     font-size: 40px;
     color: #4bb5c1;
+}
+
+/* Média queries */
+
+@media (max-width: 767px){
+    h4{
+        font-size: 20px;
+    }
+
+    .h2Consultation, .h2Massage, .h2Preparation{
+        font-size: 20px;
+    }
+
+    h2{
+        font-size: 25px;
+    }
+
+    .calendrier_mobile{
+        display: block;
+    }
+
+    .calendrier_desktop{
+        display: none;
+    }
 }

@@ -15,6 +15,11 @@
     position:absolute;
 }
 
-.h6Paiement, .iconPaiement{
+.h6Paiement,
+.iconPaiement{
     color: white;
+}
+
+.copyright{
+    color: dimgray;
 }

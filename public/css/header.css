@@ -8,7 +8,7 @@
     font-size: 18px;
 }
 
-.view {
+.view{
     background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0.8)), url("../img/img2.jpg")no-repeat center center;
     background-size: cover;
     opacity:0.8;
@@ -17,7 +17,7 @@
 html,
 body,
 header,
-.view {
+.view{
   height: auto;
 }
 
@@ -32,6 +32,15 @@ header,
     color: #95c92c;
 }
 
+@media (max-width: 767px){
+    h4{
+        font-size: 20px;
+    }
+
+    .fa-briefcase-medical{
+        font-size: 30px;
+    }
+}
 
   
 

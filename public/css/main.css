@@ -16,157 +16,48 @@ h2{
 
 /* Home page */
 
-.fa-home{
+.fa-home,
+.fa-wallet,
+.fa-user-md,
+.fa-clock,
+.fa-comments{
     font-size: 40px;
     color: #4bb5c1;
 }
-
-.fa-wallet{
-    font-size: 40px;
-    color: #4bb5c1;
-}
-
-.liste1{
-    list-style: none;
-    text-align-last: center;
-}
-
-/* Page home */
 
 h5, P, td, li, label{
     color: dimgray;
 }
 
-/* Carousel */
+.testimonial_job,
+.modal-title{
+    color: #4bb5c1;
+}
 
-/*.carousel {
-    width: 100%;
-    overflow: scroll;
-    padding: 30px;
-    position: relative;
-    box-sizing: border-box;
- }
- .carousel__container {
-    white-space: nowrap;
- }
- .carousel-item {
-    background-color: #ffffff;
-    width: 200px;
-    height: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-right: 10px;
-    display: inline-block;
-    cursor: pointer;
-    transition: 450ms all;
-    transform-origin: center left;
-    position: relative;
- }
- .carousel-item:hover ~ .carousel-item {
-    transform: translate3d(100px, 0, 0);
- }
- .carousel__container:hover .carousel-item {
-    opacity: 0.3;
- }
- .carousel__container:hover .carousel-item:hover {
-    transform: scale(1.5);
-    opacity: 1;
- }
- .carousel-item__img {
-    width: 200px;
-    height: 250px;
-    object-fit: cover;
- }
- .carousel-item__details {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
-    font-size: 10px;
-    color: white;
-    opacity: 0;
-    transition: 450ms opacity;
-    padding: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    white-space: normal;
-    display: flex;
-    flex-flow: row wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
- }
- .carousel-item__details:hover {
-    opacity: 1;
- }
- .carousel-item__details--title {
-   font-size: 15px;
-   color: white;
- }
- .carousel-item__details--subtitle {
-   
- }*/
+@media (max-width: 767px){
+    h2{
+        font-size: 25px;
+    }
 
-/* flip card */
+    .fa-home,
+    .fa-wallet,
+    .fa-user-md,
+    .fa-clock,
+    .fa-comments{
+        font-size: 30px;
+    }
 
-.card-flip > div {
-    backface-visibility: hidden;
-    transition: transform 500ms;
-    transition-timing-function: linear;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    display: flex;
-  }
-  
-  .card-front {
-    transform: rotateY(0deg);
-  }
-  
-  .card-back {
-    transform: rotateY(180deg);
-    position: absolute;
-    top: 0;
-  }
-  
-  .card-flip:hover .card-front {
-    transform: rotateY(-180deg);
-  }
-    
-  .card-flip:hover .card-back {
-    transform: rotateY(0deg);
-  }
+    h1{
+        font-size: 30px;
+    }
 
-  .card-text{
-      color: dimgray;
-      font-size: 13px;
-      text-align: justify;
-  }
-
-  .fa-user-md{
-      font-size: 40px;
-      color: #4bb5c1;
-  }
-
-  .fa-clock{
-      font-size: 40px;
-      color: #4bb5c1;
-  }
+    .h3-responsive{
+        font-size: 18px;
+    }
+}
 
 
- .testimonial_job{
-   color: #4bb5c1;
- }
 
- .modal-title{
-   color: #4bb5c1;
- }
-
- .fa-comments{
-   font-size: 40px;
-   color: #4bb5c1;
- }
 
   
  
