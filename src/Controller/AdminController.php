@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-
 /**
  * @IsGranted("ROLE_ADMIN")
  */
@@ -22,6 +21,12 @@ class AdminController extends AbstractController
      */
     public function index(Request $request, ObjectManager $manager)
     {
+        $posts = $this
+            ->getDoctrine()
+            ->getRepository(post::class)
+            ->findAll()
+        ;
+
         $post = new Post();
         $form = $this->createform(NewPostType::class, $post);
 
@@ -37,22 +42,7 @@ class AdminController extends AbstractController
         }
 
         return $this->render('admin/index.html.twig', [
-            'form' => $form->createView()
-        ]);
-    }
-
-    /**
-     * @Route("/admin/voir", name="admin_voir")
-     */
-    public function voir()
-    {
-        $posts = $this
-            ->getDoctrine()
-            ->getRepository(post::class)
-            ->findAll()
-        ;
-
-        return $this->render('admin/voir.html.twig', [
+            'form' => $form->createView(),
             'posts' => $posts,
         ]);
     }
@@ -73,7 +63,7 @@ class AdminController extends AbstractController
 
             $this->addFlash('success', "Le post on bien été modifié !");
 
-            return $this->redirectToRoute('admin_voir');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('admin/edit.html.twig', [
@@ -96,6 +86,6 @@ class AdminController extends AbstractController
 
         $this->addFlash('success', "Le post a bien été supprimé !");
 
-        return $this->redirectToRoute('admin_voir');
+        return $this->redirectToRoute('admin');
     }
 }
