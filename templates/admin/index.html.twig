@@ -64,40 +64,71 @@
             </div>
         </div>
 
-        <div class="col-lg-7">
+        <div class="col-lg-7 div_desktop">
             <div class="jumbotron my-4">
                 <h2 class="text-center mb-5">Liste des posts</h2>
-                <table class="table table-striped"> 
-                    <tr>
-                        <th>Titre</th>
-                        <th>Message</th>
-                        <th>Publier par</th>
-                        <th>Publier le</th>
-                        <th colspan="2" class="text-center">Actions</th>
-                    </tr>
-                    {% for post in posts %}
-                    <tr>
-                        <td>{{ post.title }}</td>
-                        <td>{{ post.message }}</td>
-                        <td>{{ post.practicien }}</td>
-                        <td>{{ post.publierLe|date('d-m-y') }}</td>
-                        <td><a href="{{ path('admin_post_edit', { 'id': post.id }) }}" 
-                            class="btn btn-warning btn-block"
+                {% for post in posts %}
+                <dl class="row">
+                    <dt class="col-md-4">Titre</dt>
+                    <dt class="col-md-8">{{ post.title }}</dt>
+                    <dt class="col-md-4">Publier par</dt>
+                    <dt class="col-md-8">{{ post.practicien }}</dt>
+                    <dt class="col-md-4">Publier le</dt>
+                    <dt class="col-md-8">{{ post.publierLe | date('d/m/y') }}</dt>
+                    <dt class="col-md-4">Actions</dt>
+                    <dt class="col-md-8">
+                        <a href="{{ path('admin_post_edit', { 'id': post.id }) }}" 
+                            class="btn btn-warning"
                             data-toggle="tooltip" 
                             data-placement="bottom"
                             title="Modifier"
-                            ><i class="fas fa-pen"></i></a></td>
-                        <td><a href="{{ path('admin_post_delete', { 'id': post.id }) }}" 
-                            class="btn btn-danger btn-block"
+                            ><i class="fas fa-pen"></i>
+                        </a>
+                        <a href="{{ path('admin_post_delete', { 'id': post.id }) }}" 
+                            class="btn btn-danger"
                             data-toggle="tooltip" 
                             data-placement="bottom"
-                            title="Supprimer"
-                            ><i class="fas fa-trash"></i></a></td>
-                    </tr>
-                    {% else %}
-                    <td>Aucun post dans la base de données !</td>
-                    {% endfor %}
-                </table>
+                            title="Supprimer" 
+                            onclick="return confirm
+                                (`Etes vous sur de vouloir supprimer l'annonce : {{ post.title }} ?`)"
+                            ><i class="fas fa-trash"></i>
+                        </a>
+                    </dt>
+                </dl>
+                <hr>
+                {% else %}
+                <p>Aucun post dans la base de données !</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-lg-7 div_mobile">
+            <div class="jumbotron my-4">
+                <h2 class="text-center mb-5">Liste des posts</h2>
+                {% for post in posts %}
+                <p><strong>Titre :</strong> {{ post.title }}</p>
+                <p><strong>Actions :</strong> 
+                    <a href="{{ path('admin_post_edit', { 'id': post.id }) }}" 
+                        class="btn btn-warning"
+                        data-toggle="tooltip" 
+                        data-placement="bottom"
+                        title="Modifier"
+                        ><i class="fas fa-pen"></i>
+                    </a>
+                    <a href="{{ path('admin_post_delete', { 'id': post.id }) }}" 
+                        class="btn btn-danger"
+                        data-toggle="tooltip" 
+                        data-placement="bottom"
+                        title="Supprimer" 
+                        onclick="return confirm
+                            (`Etes vous sur de vouloir supprimer l'annonce : {{ post.title }} ?`)"
+                        ><i class="fas fa-trash"></i>
+                    </a>
+                </p>
+                <hr>
+                {% else %}
+                <p>Aucun post dans la base de données !</p>
+                {% endfor %}
             </div>
         </div>
     </div>

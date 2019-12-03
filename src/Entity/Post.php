@@ -22,11 +22,13 @@ class Post
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\length(max=30, maxMessage="Votre titre est trop long, 30 caractères maximun")
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\length(min=50, minMessage="Votre message est trop court, 50 caractères minimum")
      */
     private $message;
 
