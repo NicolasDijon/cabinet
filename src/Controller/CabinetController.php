@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Post;
 use App\Form\CalculType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,10 +13,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CabinetController extends AbstractController
 {
     /**
-     * 
-     * Controlleur qui retourne la home page
+     * Permet d'afficher la homepage avec les 3 derniers posts publié
      * 
      * @Route("/", name="home")
+     * 
+     * @return Response
      */
     public function home()
     {
@@ -31,54 +33,66 @@ class CabinetController extends AbstractController
     }
 
     /**
-     * Controlleur qui retourne la page consultation 
+     * Permet d'afficher la page consultation
      * 
      * @route("/consultations", name="consultation")
+     * 
+     * @return Response
      */
     public function consultations(){
         return $this->render('cabinet/consultations.html.twig');
     }
 
     /**
-     * Controlleur qui retourne la page préparation 
+     * Permet d'afficher la page préparation 
      * 
      * @route("/preparation", name="preparation")
+     * 
+     * @return Response
      */
     public function preparation(){
         return $this->render('cabinet/preparation.html.twig');
     }
 
     /**
-     * Controlleur qui retourne la page massage 
+     * Permet d'afficher la page massage 
      * 
      * @route("/massage", name="massage")
+     * 
+     * @return Response
      */
     public function massage(){
         return $this->render('cabinet/massage.html.twig');
     }
 
     /**
-     * Controlleur qui retourne la page conseil calendrier
+     * Permet d'afficher la page conseil calendrier
      * 
      * @route("/calendrier", name="calendrier")
+     * 
+     * @return Response
      */
     public function calendrier(){
         return $this->render('cabinet/conseilCalendrier.html.twig');
     }
 
     /**
-     * Controlleur qui retourne la page conseil lexique
+     * Permet d'afficher la page conseil lexique
      * 
      * @route("/lexique", name="lexique")
+     * 
+     * @return Response
      */
     public function lexique(){
         return $this->render('cabinet/conseilLexique.html.twig');
     }
 
     /**
-     * Controlleur qui retourne la page conseil calcul
+     * Permet d'afficher la page conseil calcul et son formulaire
      * 
      * @route("/calcul", name="calcul")
+     * 
+     * @return Response
      */
     public function calcul(){
         
@@ -90,20 +104,24 @@ class CabinetController extends AbstractController
     }
 
     /**
-     * Controlleur qui retourne la page horaires et tarifs
+     * Permet d'afficher la page horaires et tarifs
      * 
      * @route("/horaire&tarifs", name="horaires_tarifs")
+     * 
+     * @return Response
      */
     public function horairesTarifs(){
-        
         return $this->render('cabinet/horairesTarifs.html.twig');
     }
 
     /**
-     * Controlleur qui retourne la méthode pour calculer
+     * Méthode pour calculer
      * la date d'accouchement suivant la date choisit.
      * 
      * @Route("/dateAccouchement", name="date_accouchement")
+     * 
+     * @param Request $request
+     * @return Response
      */
     public function dateAccouchement(Request $request)
     {
@@ -132,10 +150,13 @@ class CabinetController extends AbstractController
     }
 
     /**
-     * Controlleur qui retourne la méthode pour calculer
+     * Méthode pour calculer
      * la date de conception suivant la date choisit.
      * 
      * @Route("/dateConception", name="date_conception")
+     * 
+     * @param Request $request
+     * @return Response
      */
     public function dateConception(Request $request)
     {

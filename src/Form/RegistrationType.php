@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Form\ApplicationType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -10,21 +11,14 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
-class RegistrationType extends AbstractType
+class RegistrationType extends ApplicationType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class,[
-                'attr' => [
-                    'placeholder' => 'Votre adresse email valide'
-                ]
-            ])
-            ->add('password', PasswordType::class,[
-                'attr' => [
-                    'placeholder' => 'Votre mot de passe (8 caractères minimum)'
-                ]
-            ])
+            ->add('email', EmailType::class, $this->getConfiguration("Email", "Taper une adresse email valide"))
+            ->add('password', PasswordType::class, $this->getConfiguration("Mot de passe", "Votre mot de passe..."))
+            ->add('passwordConfirm', PasswordType::class, $this->getConfiguration("Confirmation mot de passe", "Confirmer votre mot de passe"))
         ;
     }
 

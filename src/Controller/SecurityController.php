@@ -15,7 +15,12 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class SecurityController extends AbstractController
 {
     /**
+     * Permet d'afficher la page de login
+     * 
      * @Route("/login", name="app_login")
+     * 
+     * @param AuthenticationUtils $authenticationUtils
+     * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
@@ -23,16 +28,19 @@ class SecurityController extends AbstractController
         //    $this->redirectToRoute('target_path');
         // }
 
-        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
+
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
     /**
+     * Permet à l'utilisateur de se déconnecter
+     * 
      * @Route("/logout", name="app_logout")
+     * 
+     * @return Response
      */
     public function logout()
     {
@@ -40,10 +48,15 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * Controlleur qui retourne la page d'inscription 
-     * et qui affiche le formulaire d'inscription 
+     * Permet d'afficher la page d'inscription 
+     * et son formulaire
      * 
      * @route("/inscription", name="security_registration")
+     * 
+     * @param Request $resquest
+     * @param ObjectManager $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @return Response
      */
     public function registration(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder){
         $user = new User();

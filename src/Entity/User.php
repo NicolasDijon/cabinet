@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(
+ * fields={"email"},
+ * message="Un autre utilisateur s'est déjà inscrit avec cette adresse email, merci de la modifier")
  */
 class User implements UserInterface
 {
@@ -19,6 +24,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Email(message="Veuillez renseigner un email valide !")
      */
     private $email;
 
@@ -30,8 +36,14 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\Length(min=8, minMessage="Votre mot de passe doit faire 8 caractères minimum !")
      */
     private $password;
+
+    /**
+     * @Assert\EqualTo(propertyPath="password", message="Vous n'avez pas renseigné le même mot de passe")
+     */
+    public $passwordConfirm;
 
     public function getId(): ?int
     {
@@ -81,6 +93,7 @@ class User implements UserInterface
 
         return $this;
     }
+    
     /**
      * @see UserInterface
      */
@@ -99,17 +112,10 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getSalt()
-    {
-        // not needed when using the "bcrypt" algorithm in security.yaml
-    }
+    public function getSalt(){}
 
     /**
      * @see UserInterface
      */
-    public function eraseCredentials()
-    {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
-    }
+    public function eraseCredentials(){}
 }

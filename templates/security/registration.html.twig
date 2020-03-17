@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
 {% block body %}
 
-{# Navbar #}
-
-{{ include('cabinet/navbar.html.twig') }}
-
 {# Bloc titre #}
-
 <div class="container-fluid">
     <div class="row">
         <div class="blocTitle text-center col-xl-12">
@@ -18,27 +17,15 @@
 </div>
 
 {# Formulaire d'inscription #}
-
 <div class="container">
     <div class="jumbotron mb-5 mt-5">
-        <div class="text-center">
-            <i class="fas fa-folder mb-3"></i>
-        </div>
         <h2 class="text-center mb-5">Formulaire d'inscription</h2>
 
         {{ form_start(form) }}
-        <div class="form-group mb-4">
-            {{ form_row(form.email, {'label': 'Adresse email', 'attr': {'class': 'form-control'}}) }}
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-xs-12 mb-4">
-                {{ form_row(form.password, {'label': 'Mot de passe', 'attr': {'class': 'form-control password'} }) }}
-                <span class="regexPassword"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-success form-control btn-block">Inscription !</button>
-        </div>
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.passwordConfirm) }}
+         <button type="submit" class="btn btn-success form-control btn-block">Inscription !</button>
         {{ form_end(form) }}
     </div>
 </div>
